@@ -11,22 +11,30 @@
 	</head>
 	<body>
 		<h1>Petsitter Xpress</h1>
+		<p><a href="#">Display Registered Pets</a></p>
 		<form>
 		<fieldset>
 			<legend>Add a new pet:</legend>
 			<ul>
 			<p><li><label>Pet's Name: <input></label></li></p>
+			<!--Species Drop Box-->
+			<!---->
 			<!--Gender Selection-->
 			<li><label>Gender:</label></li>
 				<!--Fix so only one can be selected at a time-->
 				<p><label><input type=radio>Male</label></p>
 				<p><label><input type=radio>Female</label></p>
 				<p><label><input type=radio>Unknown/Unsure</label></p>
+			<!--Temperment Slider-->
+			<li><label>Temperament:</label></li>
+				<p>From Violent(1) to Friendly(10)</p>
+				<p><input type="range" min="1" max="10" step="1"></p>
 			<!--Care Given Options-->
 			<li><label>Care Given:</label></li>
 				<p><label><input type=checkbox>Fed (morning)</label></p>
 				<p><label><input type=checkbox>Fed (evening)</label></p>
 				<p><label><input type=checkbox>Watered</label></p>
+				<p><label><input type=checkbox>Medicated (if applicable)</label></p>
 				<p><label><input type=checkbox>Walked (if applicable)</label></p>
 				<p><label><input type=checkbox>Bathed (if applicable)</label></p>
 				<p><label><input type=checkbox>Cleaned cage/tank/pen</label></p>
@@ -38,9 +46,16 @@
 				<p><label><input type=checkbox>Destructive</label></p>
 				<p><label><input type=checkbox>Other:</label></p>
 				<p><textarea></textarea></p>
+			<!--Date Of Care Input-->
+			<li><label>Date of Care:</label></li>
+				<p><input type=date></p>
+			<!--Extra Notes-->
 			<li><label>Extra Notes:</label></li>
-				<textarea></textarea>
+				<p><textarea></textarea></p>
+			<!--Clear Form Link-->
+			<a href="#">Clear Form</a>
 		</fieldset>
 		</form>
+		<!--Save Button-->
 	</body>
 </html>
