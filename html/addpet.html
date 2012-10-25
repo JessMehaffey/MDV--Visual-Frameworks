@@ -11,15 +11,36 @@
 	</head>
 	<body>
 		<h1>Petsitter Xpress</h1>
-		<h2>Add a new pet:</h2>
 		<form>
-			<p><label>Pet's Name: <input></label></p>
-			<fieldset>
-				<legend>Gender:</legend>
+		<fieldset>
+			<legend>Add a new pet:</legend>
+			<ul>
+			<p><li><label>Pet's Name: <input></label></li></p>
+			<!--Gender Selection-->
+			<li><label>Gender:</label></li>
+				<!--Fix so only one can be selected at a time-->
 				<p><label><input type=radio>Male</label></p>
 				<p><label><input type=radio>Female</label></p>
 				<p><label><input type=radio>Unknown/Unsure</label></p>
-			</fieldset>
+			<!--Care Given Options-->
+			<li><label>Care Given:</label></li>
+				<p><label><input type=checkbox>Fed (morning)</label></p>
+				<p><label><input type=checkbox>Fed (evening)</label></p>
+				<p><label><input type=checkbox>Watered</label></p>
+				<p><label><input type=checkbox>Walked (if applicable)</label></p>
+				<p><label><input type=checkbox>Bathed (if applicable)</label></p>
+				<p><label><input type=checkbox>Cleaned cage/tank/pen</label></p>
+			<!--Issues Options-->
+			<li><label>Issues Encountered:</label></li>
+				<p><label><input type=checkbox>Ran away</label></p>
+				<p><label><input type=checkbox>Accident</label></p>
+				<p><label><input type=checkbox>Sick</label></p>
+				<p><label><input type=checkbox>Destructive</label></p>
+				<p><label><input type=checkbox>Other:</label></p>
+				<p><textarea></textarea></p>
+			<li><label>Extra Notes:</label></li>
+				<textarea></textarea>
+		</fieldset>
 		</form>
 	</body>
 </html>
