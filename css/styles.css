@@ -3,7 +3,8 @@
  Must style 8 HTML tags
  Use #cc9966 as background color
  Use #ffcc99 as inside color
- 
+ NEED 1 MORE HTML STYLE
+ NEED 3 MORE CSS PROPERTIES
  
  By: Jessica Mehaffey
  Term: VFW 1211
@@ -11,12 +12,12 @@
  Date: 11/1/2012
 */
 
+/* Body style */
 body {
 	background-color: #cc9966;
 	font-family: 'Times New Roman', Times, serif;
 }
 
-/* index.html */
 /* H1 style */
 h1 {
 	margin: 10px;
@@ -37,6 +38,8 @@ p {
 /* H2 style */
 h2 {
 	margin: 30px 10px;
+	color: #000000;
+	font-style: italic;
 }
 
 /* "Add pet" link style */
@@ -50,17 +53,24 @@ a {
 	/* Hover color of "Add Pet" */
 	a:hover{color:yellow;}
 
-
-/* addpet.html*/
-/* H1 style*/
-h1 {
-	margin: 10px;
-	padding: 15px 10px;
-	border: 3px double black;
-	background: #ffcc99;
+/* All bulleted text */
+li {
+	margin: 5px;
+	color: #ffffcc;
+	text-shadow: 0px 5px 3px #555;
+}
+/* Legend style */
+legend {
+	color: #ffffcc;
+	font-size: 30px;
+	font-style: italic;
+	text-shadow: 0px 5px 3px #555;
 }
 
-/* List style*/
-li {
-	
+/* Span style */
+span {
+	text-align: left;
+	font-size: 14px;
+	font-style: italic;
+	color: #CCCCCC;
 }
