@@ -14,7 +14,7 @@ Date: 11/1/2012
 		<meta name="robots" content="noindex, nofollow" />
 		<meta name="viewport" content="user-scalable=no, width=device-width" />
 			<!--Link to CSS stylesheet-->
-			<link rel="stylesheet" href="styles.css" />
+			<link rel="stylesheet" href="../css/styles.css" />
 			<!--What browser top bar reads:-->
 			<title>Add a Pet - Petsitter Xpress</title>
 	</head>
@@ -25,7 +25,8 @@ Date: 11/1/2012
 		<fieldset>
 			<legend>Add a new pet:</legend>
 			<ol>
-			<li><label for="petName">Pet's Name: <input type=text></label></li>
+			<li>Pet's Name:</li>
+			<label for="petName"><input type=text id="petName"></label>
 			<!--Species Drop Box-->
 			<li>Species:</li>
 				<select id="specieslist">
@@ -40,33 +41,33 @@ Date: 11/1/2012
 				</select>
 			<!--Gender Selection-->
 			<li>Gender:</li>
-				<p><label for="genderMale"><input type=radio name="gender">Male</label></p>
-				<p><label for="genderFemale"><input type=radio name="gender">Female</label></p>
-				<p><label for="genderUnknown"><input type=radio name="gender">Unknown/Unsure</label></p>
+				<p><label for="genderMale"><input type=radio name="gender" id="genderMale">Male</label></p>
+				<p><label for="genderFemale"><input type=radio name="gender" id="genderFemale">Female</label></p>
+				<p><label for="genderUnknown"><input type=radio name="gender" id="genderUnknown">Unknown/Unsure</label></p>
 			<!--Temperment Slider-->
 			<li>Temperament:</li>
 				<p>From Violent(1) to Friendly(10)</p>
-				<p><input type="range" min="1" max="10" step="1"></p>
+				<p><input type="range" min="1" max="10" step="1" id="temperment"></p>
 			<!--Care Given Options-->
 			<li>Care Given:</li>
-				<p><label for="fedMorning"><input type=checkbox>Fed (morning)</label></p>
-				<p><label for="fedEvening"><input type=checkbox>Fed (evening)</label></p>
-				<p><label for="watered"><input type=checkbox>Watered</label></p>
-				<p><label for="medicated"><input type=checkbox>Medicated (if applicable)</label></p>
-				<p><label for="walked"><input type=checkbox>Walked (if applicable)</label></p>
-				<p><label for="bathed"><input type=checkbox>Bathed (if applicable)</label></p>
-				<p><label for="cleanedCage"><input type=checkbox>Cleaned cage/kennel/tank/pen</label></p>
+				<p><label for="fedMorning"><input type=checkbox id="fedMorning">Fed (morning)</label></p>
+				<p><label for="fedEvening"><input type=checkbox id="fedEvening">Fed (evening)</label></p>
+				<p><label for="watered"><input type=checkbox id="watered">Watered</label></p>
+				<p><label for="medicated"><input type=checkbox id="medicated">Medicated (if applicable)</label></p>
+				<p><label for="walked"><input type=checkbox id="walked">Walked (if applicable)</label></p>
+				<p><label for="bathed"><input type=checkbox id="bathed">Bathed (if applicable)</label></p>
+				<p><label for="cleanedCage"><input type=checkbox id="cleanedCage">Cleaned cage/kennel/tank/pen</label></p>
 			<!--Issues Options-->
 			<li>Issues Encountered:</li>
-				<p><label for="ranAway"><input type=checkbox>Ran away</label></p>
-				<p><label for="accident"><input type=checkbox>Accident</label></p>
-				<p><label for="sick"><input type=checkbox>Sick</label></p>
-				<p><label for="destructive"><input type=checkbox>Destructive</label></p>
-				<p><label for="other"><input type=checkbox>Other:</label></p>
+				<p><label for="ranAway"><input type=checkbox id="ranAway">Ran away</label></p>
+				<p><label for="accident"><input type=checkbox id="accident">Accident</label></p>
+				<p><label for="sick"><input type=checkbox id="sick">Sick</label></p>
+				<p><label for="destructive"><input type=checkbox id="destructive">Destructive</label></p>
+				<p><label for="other"><input type=checkbox id="other">Other:</label></p>
 				<p><textarea></textarea></p>
 			<!--Date Of Care Input-->
 			<li>Date of Care:</li>
-				<p><input type=date></p>
+				<p><input type=date id="date"></p>
 			<!--Extra Notes-->
 			<li>Extra Notes:</li>
 				<p><textarea></textarea></p>
