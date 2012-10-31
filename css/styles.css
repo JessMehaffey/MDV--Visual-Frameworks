@@ -11,6 +11,11 @@
  Date: 11/1/2012
 */
 
+body {
+	background-color: #cc9966;
+	font-family: 'Times New Roman', Times, serif;
+}
+
 /* index.html */
 /* H1 style */
 h1 {
@@ -19,14 +24,12 @@ h1 {
 	border: 3px double black;
 	background: #ffcc99;
 	width: 220px;
-	font-family: 'Times New Roman', Times, serif;
 }
 
 /* Paragraph 1 style */
 p {
 	color: #ffffcc;
 	font-style: italic;
-	font-family: 'Times New Roman', Times, serif;
 	text-align: left;
 	text-indent: 10px;
 }
@@ -34,7 +37,6 @@ p {
 /* H2 style */
 h2 {
 	margin: 30px 10px;
-	font-family: 'Times New Roman', Times, serif;
 }
 
 /* "Add pet" link style */
@@ -42,7 +44,6 @@ a {
 	margin: 5px;
 	padding: 10px;
 	font-style: bold;
-	font-family: 'Times New Roman', Times, serif;
 	font-size: 14px;
 	color: blue;
 }
