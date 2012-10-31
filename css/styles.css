@@ -19,27 +19,37 @@ h1 {
 	border: 3px double black;
 	background: #ffcc99;
 	width: 220px;
+	font-family: 'Times New Roman', Times, serif;
 }
 
 /* Paragraph 1 style */
 p {
-
+	color: #ffffcc;
+	font-style: italic;
+	font-family: 'Times New Roman', Times, serif;
+	text-align: left;
+	text-indent: 10px;
 }
 
 /* H2 style */
 h2 {
-
+	margin: 30px 10px;
+	font-family: 'Times New Roman', Times, serif;
 }
 
 /* "Add pet" link style */
 a {
-
+	margin: 5px;
+	padding: 10px;
+	font-style: bold;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 14px;
+	color: blue;
 }
+	/* Hover color of "Add Pet" */
+	a:hover{color:yellow;}
 
-/* Hover color of "Add Pet" */
-a:hover{color:yellow;}
 
-/* Figure out how to link to addpet.html */
 /* addpet.html*/
 /* H1 style*/
 h1 {
@@ -49,13 +59,7 @@ h1 {
 	background: #ffcc99;
 }
 
-/* "Display Registered Pets" link style*/
-a {
-
-}
-	a:hover{color:yellow;}
-
-/* Label style*/
-label {
-	display: block;
+/* List style*/
+li {
+	
 }
