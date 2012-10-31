@@ -24,55 +24,62 @@ Date: 11/1/2012
 		<form>
 		<fieldset>
 			<legend>Add a new pet:</legend>
-			<ol>
-			<li>Pet's Name:</li>
-			<label for="petName"><input type=text id="petName"></label>
-			<!--Species Drop Box-->
-			<li>Species:</li>
-				<select id="specieslist">
-				<option value="1">Dog</option>
-				<option value="2">Cat</option>
-				<option value="3">Fish</option>
-				<option value="4">Bird</option>
-				<option value="5">Horse</option>
-				<option value="6">Reptile</option>
-				<option value="7">Rodent</option>
-				<option value="8">Other</option>
-				</select>
-			<!--Gender Selection-->
-			<li>Gender:</li>
-				<p><label for="genderMale"><input type=radio name="gender" id="genderMale">Male</label></p>
-				<p><label for="genderFemale"><input type=radio name="gender" id="genderFemale">Female</label></p>
-				<p><label for="genderUnknown"><input type=radio name="gender" id="genderUnknown">Unknown/Unsure</label></p>
-			<!--Temperment Slider-->
-			<li>Temperament:</li>
-				<p>From Violent(1) to Friendly(10)</p>
-				<p><input type="range" min="1" max="10" step="1" id="temperment"></p>
-			<!--Care Given Options-->
-			<li>Care Given:</li>
-				<p><label for="fedMorning"><input type=checkbox id="fedMorning">Fed (morning)</label></p>
-				<p><label for="fedEvening"><input type=checkbox id="fedEvening">Fed (evening)</label></p>
-				<p><label for="watered"><input type=checkbox id="watered">Watered</label></p>
-				<p><label for="medicated"><input type=checkbox id="medicated">Medicated (if applicable)</label></p>
-				<p><label for="walked"><input type=checkbox id="walked">Walked (if applicable)</label></p>
-				<p><label for="bathed"><input type=checkbox id="bathed">Bathed (if applicable)</label></p>
-				<p><label for="cleanedCage"><input type=checkbox id="cleanedCage">Cleaned cage/kennel/tank/pen</label></p>
-			<!--Issues Options-->
-			<li>Issues Encountered:</li>
-				<p><label for="ranAway"><input type=checkbox id="ranAway">Ran away</label></p>
-				<p><label for="accident"><input type=checkbox id="accident">Accident</label></p>
-				<p><label for="sick"><input type=checkbox id="sick">Sick</label></p>
-				<p><label for="destructive"><input type=checkbox id="destructive">Destructive</label></p>
-				<p><label for="other"><input type=checkbox id="other">Other:</label></p>
-				<p><textarea></textarea></p>
-			<!--Date Of Care Input-->
-			<li>Date of Care:</li>
-				<p><input type=date id="date"></p>
-			<!--Extra Notes-->
-			<li>Extra Notes:</li>
-				<p><textarea></textarea></p>
-			<!--Clear Form Link-->
-			<a href="#">Clear Form</a>
+				<ul>
+					<li>Pet's Name:</li>
+					<label for="petName"><input type=text id="petName"></label>
+					<!--Species Drop Box-->
+					<li>Species:</li>
+						<select id="specieslist">
+							<option value="1">Dog</option>
+							<option value="2">Cat</option>
+							<option value="3">Fish</option>
+							<option value="4">Bird</option>
+							<option value="5">Horse</option>
+							<option value="6">Reptile</option>
+							<option value="7">Rodent</option>
+							<option value="8">Other</option>
+						</select>
+					<!--Gender Selection-->
+					<li>Gender:</li>
+						<ul>
+							<li><label for="genderMale"><input type=radio name="gender" id="genderMale">Male</label></li>
+							<li><label for="genderFemale"><input type=radio name="gender" id="genderFemale">Female</label></li>
+							<li><label for="genderUnknown"><input type=radio name="gender" id="genderUnknown">Unknown/Unsure</label></li>
+						</ul>
+					<!--Temperment Slider-->
+					<li>Temperament:</li>
+						<p>From Violent(1) to Friendly(10)</p>
+						<input type="range" min="1" max="10" step="1" id="temperment"></p>
+					<!--Care Given Options-->
+					<li>Care Given:</li>
+						<ul>
+							<li><label for="fedMorning"><input type=checkbox id="fedMorning">Fed (morning)</label></li>
+							<li><label for="fedEvening"><input type=checkbox id="fedEvening">Fed (evening)</label></li>
+							<li><label for="watered"><input type=checkbox id="watered">Watered</label></li>
+							<li><label for="medicated"><input type=checkbox id="medicated">Medicated (if applicable)</label></li>
+							<li><label for="walked"><input type=checkbox id="walked">Walked (if applicable)</label></li>
+							<li><label for="bathed"><input type=checkbox id="bathed">Bathed (if applicable)</label></li>
+							<li><label for="cleanedCage"><input type=checkbox id="cleanedCage">Cleaned cage/kennel/tank/pen</label></li>
+						</ul>
+					<!--Issues Options-->
+					<li>Issues Encountered:</li>
+						<ul>
+							<li><label for="ranAway"><input type=checkbox id="ranAway">Ran away</label></li>
+							<li><label for="accident"><input type=checkbox id="accident">Accident</label></li>
+							<li><label for="sick"><input type=checkbox id="sick">Sick</label></li>
+							<li><label for="destructive"><input type=checkbox id="destructive">Destructive</label></li>
+							<li><label for="other"><input type=checkbox id="other">Other:</label></li>
+							<li><textarea></textarea></p>
+						</ul>
+					<!--Date Of Care Input-->
+					<li>Date of Care:</li>
+						<p><input type=date id="date"></p>
+					<!--Extra Notes-->
+					<li>Extra Notes:</li>
+							<textarea></textarea>
+					<!--Clear Form Link-->
+					<p><a href="#">Clear Form</a></p>
+				</ul>
 		</fieldset>
 		</form>
 		<!--Save Button-->
