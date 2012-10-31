@@ -25,9 +25,9 @@ Date: 11/1/2012
 		<fieldset>
 			<legend>Add a new pet:</legend>
 			<ol>
-			<li><label>Pet's Name: <input></label></li>
+			<li><label for="petName">Pet's Name: <input type=text></label></li>
 			<!--Species Drop Box-->
-			<li><label>Species:</label></li>
+			<li>Species:</li>
 				<select id="specieslist">
 				<option value="1">Dog</option>
 				<option value="2">Cat</option>
@@ -39,36 +39,36 @@ Date: 11/1/2012
 				<option value="8">Other</option>
 				</select>
 			<!--Gender Selection-->
-			<li><label>Gender:</label></li>
-				<p><label><input type=radio name="gender">Male</label></p>
-				<p><label><input type=radio name="gender">Female</label></p>
-				<p><label><input type=radio name="gender">Unknown/Unsure</label></p>
+			<li>Gender:</li>
+				<p><label for="genderMale"><input type=radio name="gender">Male</label></p>
+				<p><label for="genderFemale"><input type=radio name="gender">Female</label></p>
+				<p><label for="genderUnknown"><input type=radio name="gender">Unknown/Unsure</label></p>
 			<!--Temperment Slider-->
-			<li><label>Temperament:</label></li>
+			<li>Temperament:</li>
 				<p>From Violent(1) to Friendly(10)</p>
 				<p><input type="range" min="1" max="10" step="1"></p>
 			<!--Care Given Options-->
-			<li><label>Care Given:</label></li>
-				<p><label><input type=checkbox>Fed (morning)</label></p>
-				<p><label><input type=checkbox>Fed (evening)</label></p>
-				<p><label><input type=checkbox>Watered</label></p>
-				<p><label><input type=checkbox>Medicated (if applicable)</label></p>
-				<p><label><input type=checkbox>Walked (if applicable)</label></p>
-				<p><label><input type=checkbox>Bathed (if applicable)</label></p>
-				<p><label><input type=checkbox>Cleaned cage/tank/pen</label></p>
+			<li>Care Given:</li>
+				<p><label for="fedMorning"><input type=checkbox>Fed (morning)</label></p>
+				<p><label for="fedEvening"><input type=checkbox>Fed (evening)</label></p>
+				<p><label for="watered"><input type=checkbox>Watered</label></p>
+				<p><label for="medicated"><input type=checkbox>Medicated (if applicable)</label></p>
+				<p><label for="walked"><input type=checkbox>Walked (if applicable)</label></p>
+				<p><label for="bathed"><input type=checkbox>Bathed (if applicable)</label></p>
+				<p><label for="cleanedCage"><input type=checkbox>Cleaned cage/kennel/tank/pen</label></p>
 			<!--Issues Options-->
-			<li><label>Issues Encountered:</label></li>
-				<p><label><input type=checkbox>Ran away</label></p>
-				<p><label><input type=checkbox>Accident</label></p>
-				<p><label><input type=checkbox>Sick</label></p>
-				<p><label><input type=checkbox>Destructive</label></p>
-				<p><label><input type=checkbox>Other:</label></p>
+			<li>Issues Encountered:</li>
+				<p><label for="ranAway"><input type=checkbox>Ran away</label></p>
+				<p><label for="accident"><input type=checkbox>Accident</label></p>
+				<p><label for="sick"><input type=checkbox>Sick</label></p>
+				<p><label for="destructive"><input type=checkbox>Destructive</label></p>
+				<p><label for="other"><input type=checkbox>Other:</label></p>
 				<p><textarea></textarea></p>
 			<!--Date Of Care Input-->
-			<li><label>Date of Care:</label></li>
+			<li>Date of Care:</li>
 				<p><input type=date></p>
 			<!--Extra Notes-->
-			<li><label>Extra Notes:</label></li>
+			<li>Extra Notes:</li>
 				<p><textarea></textarea></p>
 			<!--Clear Form Link-->
 			<a href="#">Clear Form</a>
