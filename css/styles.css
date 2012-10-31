@@ -1,6 +1,7 @@
 /*
  Must contain 12 css properties
  Must style 8 HTML tags
+ Use #cc9966 as background color
  
  
  By: Jessica Mehaffey
@@ -12,7 +13,10 @@
 /* index.html */
 /* H1 style */
 h1 {
-
+	margin: 10px;
+	padding: 15px 10px;
+	border: 3px double black;
+	background: #ffcc99;
 }
 
 /* Paragraph 1 style */
@@ -24,4 +28,6 @@ p {
 h2 {
 
 }
+
+
 /* addpet.html*/
