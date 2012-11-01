@@ -1,21 +1,20 @@
 /*
- Must contain 12 css properties
- Must style 8 HTML tags
- Use #cc9966 as background color
- Use #ffcc99 as inside color
- NEED 1 MORE HTML STYLE
- NEED 3 MORE CSS PROPERTIES
- 
  By: Jessica Mehaffey
  Term: VFW 1211
  For: Project 2
  Date: 11/1/2012
+ 
+ 
+ Inside color #ffcc99
+ Background color #cc9966
 */
 
 /* Body style */
 body {
 	background-color: #cc9966;
 	font-family: 'Times New Roman', Times, serif;
+	opacity: inherit;
+	appearance: inherit;
 }
 
 /* H1 style */
@@ -58,6 +57,7 @@ li {
 	margin: 5px;
 	color: #ffffcc;
 	text-shadow: 0px 5px 3px #555;
+	list-style-type: square;
 }
 /* Legend style */
 legend {
