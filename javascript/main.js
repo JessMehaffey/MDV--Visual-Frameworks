@@ -12,9 +12,25 @@ window.addEventListener("DOMContentLoaded", function(){
 		return theElement;
 	}
 
-	// Variable defaults
-	var petSpecies = ["--Choose Species--", "Dog", "Cat", "Fish", "Bird", "Horse", "Reptile", "Rodent", "Other"];
+	// Create select field element and populate with options
+	function makeSpecies(){
+		var formTag = document.getElementsByTagName("form"),
+			selectLi = $("select"),
+			makeSelect = document.createElement("select");
+			makeSelect.setAttribute("id", "listOfSpecies");
+		for(var i=0, j=petSpecies.length; i<j; i++){
+			var makeOption = document.createElement("option");
+			var optText = petSpecies[i];
+			makeOption.setAttribute("value", optText);
+			makeOption.innerHTML = optText;
+			makeSelect.appendChild(makeOption);
+		}
+		selectLi.appendChild(makeSelect);
+	}
 	
+	// Variable Defaults
+	var petSpecies = ["--Choose Species--", "Dog", "Cat", "Fish", "Bird", "Horse", "Reptile", "Rodent", "Other"];
+	makeSpecies();
 	
 	// Display Link
 	var displayPets = $("displayPets");
@@ -28,15 +44,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	var savePage = $("submit");
 	savePage.addEventListener("click", saveData);
 	
-	
-
-	// Access Local Storage
-	// Link this section to the "Display Registered Pets" link.
-	// Should clear form, and display all pets added.
-	// createElement - display info to user
-
-
-
 
 
 // Ending brackets for window.AddEventListener
