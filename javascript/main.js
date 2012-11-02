@@ -205,7 +205,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	}
 	
-	function clearLocal(){
+	function clearData(){
 		if(localStorage.length === 0){
 			alert("There is no data to clear!");
 		} else {
@@ -226,8 +226,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	displayPets.addEventListener("click", getData);
 	
 	// Clear Link
-	var clearForm = $("clearForm");
-	clearForm.addEventListener("click", clearData);
+	var clearRegistered = $("clearRegistered");
+	clearRegistered.addEventListener("click", clearData);
 	
 	// Save Button
 	var savePage = $("submit");
