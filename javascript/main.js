@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	// Find value of gender radio button
 	function getGenderRadio(){
 		var radios = document.forms[0].gender;
-		for(var i=0, i<radios.length; i++){
+		for(var i=0; i<radios.length; i++){
 			if(radios[i].checked){
 				genderValue = radios[i].value;
 			}
@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	// Fed in morning?
 	function getCareMorningFed(){
 		if($("fedMorning").checked){
-			morningFedValue = $("fedMorning").value;	
+			morningFedValue = $("fedMorning").value;
 		} else {
 			morningFedValue = "No."
 		}
@@ -67,8 +67,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	// Medicated?
 	function getCareMedicine(){
-		if($("medicine").checked){
-			medicineValue = $("medicine").value;	
+		if($("medicated").checked){
+			medicineValue = $("medicated").value;	
 		} else {
 			medicineValue = "No."
 		}
@@ -101,9 +101,51 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
+	// Ran Away?
+	function getIssuesRanAway(){
+		if($("ranAway").checked){
+			ranAwayValue = $("ranAway").value;
+		} else {
+			ranAwayValue = "No."
+		}
+	}
+	
+	// Accident?
+	function getIssuesAccident(){
+		if($("accident").checked){
+			accidentValue = $("accident").value;
+		} else {
+			accidentValue = "No."
+		}
+	}
+	
+	function toggleControls(n){
+		switch(n){
+			case "on":
+				$("contactForm").style.display = "none";
+				$("clear").style.display = "inline";
+				$("displayPets").style.display = "none";
+				$("addNewPet").style.display = "inline";
+				break;
+			case "off":
+				$("contactForm").style.display = "block";
+				$("clear").style.display = "inline";
+				$("displayPets").style.display = "inline";
+				$("addNewPet").style.display = "none";
+				$("items").style.display = "none";
+				break;
+			default:
+				$("contactForm").style.display = "none";
+				$("clear").style.display = "inline";
+				$("displayPets").style.display = "none";
+				$("addNewPet").style.display = "inline";
+				return false;
+		}
+	}
+	
 	function saveData(){
 		var id = Math.floor(Math.random()*10000000);
-		getSelectedRadio();
+		getGenderRadio();
 		getCareMorningFed();
 		getCareEveningFed();
 		getCareWatered();
@@ -111,6 +153,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		getCareWalked();
 		getCareBathed();
 		getCareCleanedCage();
+		getIssuesRanAway();
+		getIssuesAccident();
 		var item = {};
 			item.petName = ["Pet Name: ", $("petName").value];
 			item.group = ["Species: ", $("listOfSpecies").value];
@@ -119,21 +163,57 @@ window.addEventListener("DOMContentLoaded", function(){
 			item.morningFed = ["Fed (Morning)? ", morningFedValue]; //Checkboxes
 			item.eveningFed = ["Fed (Evening)? ", eveningFedValue]; //Checkboxes
 			item.watered = ["Watered? ", wateredValue]; //Checkboxes	
-			item.medicine = ["Medicated? ", medicineValue]; //Checkboxes
+			item.medicated = ["Medicated? ", medicineValue]; //Checkboxes
 			item.walked = ["Walked? ", walkedValue]; //Checkboxes
 			item.bathed = ["Bathed? ", bathedValue]; //Checkboxes
 			item.cleanedCage = ["Cleaned Cage? ", cleanedCageValue]; //Checkboxes
-			
-			
-			
-			
-			
-			item.issues = ["Issues Encountered: ", issesValue] //Checkboxes
+			item.ranAway = ["Did the pet run away? ", ranAwayValue]; //Checkboxes
+			item.accident = ["Did the pet have an accident? ", accidentValue]; //Checkboxes	
 			item.date = ["Date of Care: ", $("date").value];
 			item.extraNotes = ["Extra Notes: ",$("extraNotes").value];
 		// Save to Local Storage: Stringify to convert object to string
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Pet Information Saved!");
+	}
+	
+	function getData(){
+		toggleControls("on");
+		if (localStorage.length === 0){
+			alert("There is no data to clear!")
+		}
+		// Local storage to browser
+		var makeDiv = document.createElement("div");
+		makeDiv.setAttribute("id", "items");
+		var makeList = document.createElement("ul");
+		makeDiv.appendChild(makeList);
+		document.body.appendChild(makeDiv);
+		for(var i=0, len=localStorage.length; i<len; i++){
+			var makeLi = document.createElement("li");
+			makeList.appendChild(makeLi);
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			var object = JSON.parse(value);
+			var makeSubList = document.createElement("ul");
+			makeLi.appendChild(makeSubList)
+			for(var n in object){
+				var makeSubli = document.createElement("li");
+				makeSubList.appendChild(makeSubli);
+				var optSubText = object[n][0]+ " " + object[n][1];
+				makeSubli.innerHTML = optSubText;
+			}
+		}
+	
+	}
+	
+	function clearLocal(){
+		if(localStorage.length === 0){
+			alert("There is no data to clear!");
+		} else {
+			localStorage.clear();
+			alert("All saved pets have been deleted!");
+			window.location.reload();
+			return false;
+		}
 	}
 	
 	// Variable Defaults
@@ -143,7 +223,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	// Display Link
 	var displayPets = $("displayPets");
-	displayPets.addEventListener("click", getPetData);
+	displayPets.addEventListener("click", getData);
 	
 	// Clear Link
 	var clearForm = $("clearForm");
