@@ -1,7 +1,7 @@
 // Name: Jessica Mehaffey
 // Term: VFW 1211
-// For: Project 2
-// Date: 11/1/2012
+// For: Project 3
+// Date: 11/8/2012
 
 // Make sure HTML is loaded before running Javascript
 window.addEventListener("DOMContentLoaded", function(){
@@ -123,20 +123,20 @@ window.addEventListener("DOMContentLoaded", function(){
 		switch(n){
 			case "on":
 				$("contactForm").style.display = "none";
-				$("clear").style.display = "inline";
+				$("clearRegistered").style.display = "inline";
 				$("displayPets").style.display = "none";
 				$("addNewPet").style.display = "inline";
 				break;
 			case "off":
 				$("contactForm").style.display = "block";
-				$("clear").style.display = "inline";
+				$("clearRegistered").style.display = "inline";
 				$("displayPets").style.display = "inline";
 				$("addNewPet").style.display = "none";
 				$("items").style.display = "none";
 				break;
 			default:
 				$("contactForm").style.display = "none";
-				$("clear").style.display = "inline";
+				$("clearRegistered").style.display = "inline";
 				$("displayPets").style.display = "none";
 				$("addNewPet").style.display = "inline";
 				return false;
