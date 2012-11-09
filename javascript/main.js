@@ -143,8 +143,14 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
-	function saveData(){
-		var id = Math.floor(Math.random()*10000000);
+	function saveData(key){
+		// If no key, means brand new key
+		if(!key){
+			var id = Math.floor(Math.random()*10000000);
+		} else {
+			// Set id to existing key
+			id = key;
+		}
 		getGenderRadio();
 		getCareMorningFed();
 		getCareEveningFed();
@@ -282,6 +288,26 @@ window.addEventListener("DOMContentLoaded", function(){
 		$("date").value = item.date[1];
 		$("extraNotes").value = item.extraNotes[1];
 
+		// Remove initial listener from save
+		save.removeEventListener("click", storeData);
+		// Change submit button value
+		$("submit").value = "Edit Pet";
+		// Save key value
+		editSubmit.addEventListener("click", validate);
+		editSubmit.key = this.key;
+		
+	}
+	
+	function deleteItem(){
+		if(localStorage.length === 0){
+			alert("There is no data to clear.");
+		} else {
+			localStorage.clear();
+			alert("All pets have been deleted!");
+			window.location.reload();
+			return false;
+		}
+	
 	}
 	
 	
@@ -293,6 +319,47 @@ window.addEventListener("DOMContentLoaded", function(){
 			alert("All saved pets have been deleted!");
 			window.location.reload();
 			return false;
+		}
+	}
+	
+	function validate(){
+		// Define elements to check
+		var getGroup = $("groups");
+		var getPetName = $("petName");
+		
+		// Reset Error Message
+		errMsg.innerHTML = "";
+		getGroup.style.border = "1px solid black";
+		getPetName.style.border = "1px solid black";
+		
+		// Error Message
+		var messageAry = [];
+		
+		// Group validation
+		if(getGroup.value === "--Choose Species--"){
+			var groupError = "Please select a species.";
+			getGroup.style.border = "1px solid red";
+			messageAry.push(groupError);
+		}
+		
+		// Pet name validation
+		if(getPetName.value === ""){
+			var petNameError = "Please enter a pet name.";
+			getPetName.style.border = "1px solid red";
+			messageAry.push(petNameError);
+		}
+		
+		// Errors
+		if(messageAry.length >= 1){
+			for(var i=0, j=messageAry.length, i = j; i++){
+				var text = document.createElement("li");
+				text.innerHTML = messageAry[i];
+				errMsg.appendChild(txt);
+			}
+			e.preventDefault();
+			return false;
+		} else {
+			saveData(this.key);
 		}
 	}
 	
