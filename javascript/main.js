@@ -243,17 +243,42 @@ window.addEventListener("DOMContentLoaded", function(){
 		// Fill fields with current local storage values
 		$("groups").value = item.group[1];
 		$("petName").value = item.petName[1];
-		$("gender").value = item.gender[1];
+		var radios = document.forms[0].gender
+		for(var i=0; i<radios.length; i++){
+			if(radios[i].value == "Male" && obj.gender[1] == "Male"){
+				radios[i].setAttribute("checked", "checked");
+			} else if(radios[i].value == "Female" && obj.gender[1] == "Female" {
+			} else if(radios[i].value == "Unknown/Unsure" && obj.gender[1] == "Unknown/Unsure" {
+		}
+		if(obj.morningFed[i] == "Yes"){
+			$("morningFed").setAttribute("checked", "checked");
+		}
+		if(obj.eveningFed[i] == "Yes"){
+			$("eveningFed").setAttribute("checked", "checked");
+		}
+		if(obj.watered[i] == "Yes"){
+			$("watered").setAttribute("checked", "checked");
+		}
+		if(obj.medicated[i] == "Yes"){
+			$("medicated").setAttribute("checked", "checked");
+		}
+		if(obj.walked[i] == "Yes"){
+			$("walked").setAttribute("checked", "checked");
+		}
+		if(obj.bathed[i] == "Yes"){
+			$("bathed").setAttribute("checked", "checked");
+		}
+		if(obj.cleanedCage[i] == "Yes"){
+			$("cleanedCage").setAttribute("checked", "checked");
+		}
+		if(obj.ranAway[i] == "Yes"){
+			$("ranAway").setAttribute("checked", "checked");
+		}
+		if(obj.accident[i] == "Yes"){
+			$("accident").setAttribute("checked", "checked");
+		}
+		
 		$("temperamentSlider").value = item.temperamentSlider[1];
-		$("morningFed").value = item.morningFed[1];
-		$("eveningFed").value = item.eveningFed[1];
-		$("watered").value = item.watered[1];
-		$("medicated").value = item.medicated[1];
-		$("walked").value = item.walked[1];
-		$("bathed").value = item.bathed[1];
-		$("cleanedCage").value = item.cleanedCage[1];
-		$("ranAway").value = item.ranAway[1];
-		$("accident").value = item.accident[1];
 		$("date").value = item.date[1];
 		$("extraNotes").value = item.extraNotes[1];
 
