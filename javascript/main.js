@@ -189,6 +189,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		document.body.appendChild(makeDiv);
 		for(var i=0, len=localStorage.length; i<len; i++){
 			var makeLi = document.createElement("li");
+			var linksLi = document.createElement("li");
 			makeList.appendChild(makeLi);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
@@ -200,10 +201,44 @@ window.addEventListener("DOMContentLoaded", function(){
 				makeSubList.appendChild(makeSubli);
 				var optSubText = object[n][0]+ " " + object[n][1];
 				makeSubli.innerHTML = optSubText;
+				makeSubList.appendChild(linksLi);
 			}
+			// Creates edit/delete links for each object in local storage
+			makeItemLinks(localStorage.key(i) linksLi);
 		}
 	
 	}
+	// Item Links
+	function makeItemLinks(key, linksLi){
+		// Edit Link
+		var editLink = document.createElement("a");
+		editLink.href = "#";
+		editLink.key = key;
+		var editText = "Edit Pet";
+		editLink.addEventListener("click", editItem);
+		editLink.innerHTML = editText;
+		linksLi.appendChild(editLink);
+		
+		// Line Break
+		var breakTag = document.createElement("br");
+		linksLi.appendChild(breakTag);
+		// Delete Link
+		var deleteLink = document.createElement("a");
+		deleteLink.href = "#";
+		deleteLink.key = key;
+		var deleteText = "Delete Pet";
+		deleteLink.addEventListener("click", deleteItem);
+		deleteLink.innerHTML = deleteText;
+		linksLi.appendChild(deleteLink);
+	
+	}
+	
+	function editItem(){
+		// Take data from item from local storage
+		var value = localStorage.getItem(this.key);
+	
+	}
+	
 	
 	function clearData(){
 		if(localStorage.length === 0){
