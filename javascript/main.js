@@ -210,7 +210,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				makeSubList.appendChild(linksLi);
 			}
 			// Creates edit/delete links for each object in local storage
-			makeItemLinks(localStorage.key(i) linksLi);
+			makeItemLinks(localStorage.key(i), linksLi);
 		}
 	
 	}
@@ -247,14 +247,14 @@ window.addEventListener("DOMContentLoaded", function(){
 		toggleControls("off");
 		
 		// Fill fields with current local storage values
-		$("groups").value = item.group[1];
+		$("species").value = item.species[1];
 		$("petName").value = item.petName[1];
 		var radios = document.forms[0].gender
 		for(var i=0; i<radios.length; i++){
 			if(radios[i].value == "Male" && obj.gender[1] == "Male"){
 				radios[i].setAttribute("checked", "checked");
-			} else if(radios[i].value == "Female" && obj.gender[1] == "Female" {
-			} else if(radios[i].value == "Unknown/Unsure" && obj.gender[1] == "Unknown/Unsure" {
+			} else if(radios[i].value == "Female" && obj.gender[1] == "Female") {
+			} else if(radios[i].value == "Unknown/Unsure" && obj.gender[1] == "Unknown/Unsure") {
 		}
 		if(obj.morningFed[i] == "Yes"){
 			$("morningFed").setAttribute("checked", "checked");
@@ -289,12 +289,12 @@ window.addEventListener("DOMContentLoaded", function(){
 		$("extraNotes").value = item.extraNotes[1];
 
 		// Remove initial listener from save
-		save.removeEventListener("click", storeData);
+		savePage.removeEventListener("click", saveData);
 		// Change submit button value
 		$("submit").value = "Edit Pet";
 		// Save key value
-		editSubmit.addEventListener("click", validate);
-		editSubmit.key = this.key;
+		savePage.addEventListener("click", validate);
+		savePage.key = this.key;
 		
 	}
 	
@@ -310,7 +310,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	}
 	
-	
 	function clearData(){
 		if(localStorage.length === 0){
 			alert("There is no data to clear!");
@@ -324,21 +323,21 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	function validate(){
 		// Define elements to check
-		var getGroup = $("groups");
+		var getSpecies = $("species");
 		var getPetName = $("petName");
 		
 		// Reset Error Message
 		errMsg.innerHTML = "";
-		getGroup.style.border = "1px solid black";
+		getSpecies.style.border = "1px solid black";
 		getPetName.style.border = "1px solid black";
 		
 		// Error Message
 		var messageAry = [];
 		
 		// Group validation
-		if(getGroup.value === "--Choose Species--"){
-			var groupError = "Please select a species.";
-			getGroup.style.border = "1px solid red";
+		if(getSpecies.value === "--Choose Species--"){
+			var speciesError = "Please select a species.";
+			getSpecies.style.border = "1px solid red";
 			messageAry.push(groupError);
 		}
 		
@@ -351,7 +350,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 		// Errors
 		if(messageAry.length >= 1){
-			for(var i=0, j=messageAry.length, i = j; i++){
+			for(var i=0, j=messageAry.length, i = j; i++;){
 				var text = document.createElement("li");
 				text.innerHTML = messageAry[i];
 				errMsg.appendChild(txt);
@@ -383,4 +382,4 @@ window.addEventListener("DOMContentLoaded", function(){
 
 
 // Ending brackets for window.AddEventListener
-});
+};})
