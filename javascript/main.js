@@ -236,7 +236,27 @@ window.addEventListener("DOMContentLoaded", function(){
 	function editItem(){
 		// Take data from item from local storage
 		var value = localStorage.getItem(this.key);
-	
+		var item = JSON.parse(value);
+		
+		toggleControls("off");
+		
+		// Fill fields with current local storage values
+		$("groups").value = item.group[1];
+		$("petName").value = item.petName[1];
+		$("gender").value = item.gender[1];
+		$("temperamentSlider").value = item.temperamentSlider[1];
+		$("morningFed").value = item.morningFed[1];
+		$("eveningFed").value = item.eveningFed[1];
+		$("watered").value = item.watered[1];
+		$("medicated").value = item.medicated[1];
+		$("walked").value = item.walked[1];
+		$("bathed").value = item.bathed[1];
+		$("cleanedCage").value = item.cleanedCage[1];
+		$("ranAway").value = item.ranAway[1];
+		$("accident").value = item.accident[1];
+		$("date").value = item.date[1];
+		$("extraNotes").value = item.extraNotes[1];
+
 	}
 	
 	
