@@ -185,7 +185,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	function getData(){
 		toggleControls("on");
 		if (localStorage.length === 0){
-			alert("There is no data to clear!")
+			alert("There is no data to clear so default data was added!");
+			autoFillData();
 		}
 		// Local storage to browser
 		var makeDiv = document.createElement("div");
@@ -214,6 +215,16 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	
 	}
+
+	// Autofill Data Function	
+	function autoFillData(){
+		// loaded from HTML page, from json.js file
+		for(var n in json){
+			var id = Math.floor(Math.random()*10000000);
+			localStorage.setItem(id, JSON.stringify(json[n]));
+		}
+	}
+	
 	// Item Links
 	function makeItemLinks(key, linksLi){
 		// Edit Link
