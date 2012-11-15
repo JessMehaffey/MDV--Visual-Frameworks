@@ -255,6 +255,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				radios[i].setAttribute("checked", "checked");
 			} else if(radios[i].value == "Female" && obj.gender[1] == "Female") {
 			} else if(radios[i].value == "Unknown/Unsure" && obj.gender[1] == "Unknown/Unsure") {
+			}
 		}
 		if(obj.morningFed[i] == "Yes"){
 			$("morningFed").setAttribute("checked", "checked");
@@ -382,4 +383,4 @@ window.addEventListener("DOMContentLoaded", function(){
 
 
 // Ending brackets for window.AddEventListener
-};})
+});
