@@ -203,6 +203,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			var object = JSON.parse(value);
 			var makeSubList = document.createElement("ul");
 			makeLi.appendChild(makeSubList)
+			getImage(object.group[1],makeSubList);
 			for(var n in object){
 				var makeSubli = document.createElement("li");
 				makeSubList.appendChild(makeSubli);
@@ -214,6 +215,15 @@ window.addEventListener("DOMContentLoaded", function(){
 			makeItemLinks(localStorage.key(i), linksLi);
 		}
 	
+	}
+	
+	// Get image for right species
+	function getImage(catName, makeSubList){
+		var imageLi = document.createElement("li");
+		makeSubList.appendChild(imageLi);
+		var newImg = document.createElement("img");
+		var setSrc = newImg.setAttribute("src", "images/" + catName + ".png");
+		imageLi.appendChild(newImg);
 	}
 
 	// Autofill Data Function	
