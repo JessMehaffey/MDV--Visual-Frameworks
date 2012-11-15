@@ -21,7 +21,7 @@ var json = {
 		"date": ["Date:", "2012-11-14"],
 		"extraNotes": ["Notes:", "Tried eating ghost pepper plant. Stole slipper from basket and fell asleep in it."]
 	},
-	"pet1": {
+	"pet2": {
 		"petName": ["Pet Name:", "Mutt-Mutt"],
 		"group": ["Species:", "Dog"],
 		"gender": ["Gender:", "Male"],
